@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LoginComponent } from './components/login/login.component';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'instalacion-angular6';
+  public title = 'WORKI - SOCIAL NETWORK';
+  description = 'Benvenido a su nueva red social';
 }
+
+
