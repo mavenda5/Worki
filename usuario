@@ -1,0 +1,63 @@
+# Worki
+ 
+ CREATE TABLE IF NOT EXISTS `tipo_usuario` (
+  `id` int(11) NOT NULL,
+  `tipo` varchar(50) NOT NULL
+ ENGINE=InnoDB DEFAULT CHARSET=utf8;
+ 
+ REATE TABLE IF NOT EXISTS `usuarios` 
+  `id` int(11) NOT NULL,
+  `usuario` varchar(30) NOT NULL,
+  `password` varchar(130) NOT NULL,
+  `nombre` varchar(100) NOT NULL,
+  `correo` varchar(80) NOT NULL,
+  `last_session` datetime DEFAULT NULL,
+  `activacion` int(11) NOT NULL DEFAULT '0',
+  
+  `token` varchar(40) NOT NULL,
+  `token_password` varchar(100) DEFAULT NULL,
+  `password_request` int(11) DEFAULT '0',
+  `id_tipo` int(11) NOT NULL
+  
+  ALTER TABLE `tipo_usuario`
+  ADD PRIMARY KEY (`id`);
+  
+  ALTER TABLE `usuarios`
+  ADD PRIMARY KEY (`id`);
+ 
+ ALTER TABLE `tipo_usuario`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  
+  <?php
+	$mysqli=new mysqli("localhost","root","password","login"); //servidor, usuario de base de datos, contraseña del usuario, nombre de base de datos
+	
+	if(mysqli_connect_errno()){
+		echo 'Conexion Fallida : ', mysqli_connect_error();
+		exit();
+	}
+?>
+function enviarEmail($email, $nombre, $asunto, $cuerpo){
+	require_once 'PHPMailer/PHPMailerAutoload.php';
+		
+		$mail = new PHPMailer();
+		$mail->isSMTP();
+		$mail->SMTPAuth = true;
+		$mail->SMTPSecure = 'tipo de seguridad'; //Modificar
+		$mail->Host = 'dominio'; //Modificar
+		$mail->Port = puerto; //Modificar
+		
+		$mail->Username = 'correo emisor'; //Modificar
+		$mail->Password = 'password de correo emisor'; //Modificar
+		
+		$mail->setFrom('correo emisor', 'nombre de correo emisor'); //Modificar
+		$mail->addAddress($email, $nombre);
+		
+		$mail->Subject = $asunto;
+		$mail->Body    = $cuerpo;
+		$mail->IsHTML(true);
+		
+		if($mail->send())
+		return true;
+		else
+		return false;
+	}
