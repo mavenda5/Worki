@@ -26,8 +26,9 @@ namespace Worki
 
         public bool ValidarVerdaderoFalso(string comando, SqlParameter[] sqlParameters = null)
         {
-            datos.TraeDatos(comando, sqlParameters);
-            return true;
+            bool r = false;
+            r = Convert.ToBoolean(datos.TraeDatos(comando, sqlParameters).Rows[0].ItemArray[0]);
+            return r;
         }
     }
 }

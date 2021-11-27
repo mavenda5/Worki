@@ -9,7 +9,7 @@
       <Value Profile="(Default)">SALESDB</Value>
     </Setting>
     <Setting Name="UserID" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">mavendanor</Value>
+      <Value Profile="(Default)">Mavendano</Value>
     </Setting>
     <Setting Name="Password" Type="System.String" Scope="Application">
       <Value Profile="(Default)">Mercetokio863</Value>

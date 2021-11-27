@@ -43,7 +43,7 @@ namespace Worki.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("mavendanor")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Mavendano")]
         public string UserID {
             get {
                 return ((string)(this["UserID"]));

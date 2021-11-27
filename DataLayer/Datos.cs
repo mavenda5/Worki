@@ -33,8 +33,8 @@ namespace DataLayer
         {
             //Server=tcp:mavendano.database.windows.net,1433;Initial Catalog=SALESDB;Persist Security Info=False;User ID=mavendano;Password={your_password};MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;
             _cadenaConexion = "Server=" + server +
-                ";Initial Catalog=" + initialCatalog +
-                ";User ID=" + user + ";Persist Security Info=False;Password=" + password + ";" + aditionalOptions;
+                ";Initial Catalog=" + initialCatalog + ";Persist Security Info=False" +
+                ";User ID=" + user + ";Password=" + password + ";" + aditionalOptions;
         }
 
         /// <summary>

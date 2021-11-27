@@ -17,8 +17,7 @@ namespace Worki
                 new SqlParameter("@userName", userName),
                 new SqlParameter("@Password", passwordSHA512)
             };
-            operaciones.ValidarVerdaderoFalso("ValidarLogin", sqlParameters);
-            return true;
+            return operaciones.ValidarVerdaderoFalso("spValidarLogin", sqlParameters);
         }
     }
 }
